@@ -167,7 +167,7 @@ function Bento() {
                   : "bg-slate-100    text-gray-700"
               }`}
             >
-              <TechStack darkmode={darkMode} /> {/* Tech Stack Section */}
+              <TechStack darkMode={darkMode} /> {/* Tech Stack Section */}
             </div>
           </div>
         </main>

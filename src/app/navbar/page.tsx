@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Switch from "../switch/page";
 import { SiFoodpanda } from "react-icons/si";
@@ -7,7 +8,8 @@ interface NavbarProps {
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
+const Navbar: React.FC<NavbarProps> = (
+    { darkMode, setDarkMode }) => {
   return (
     <header
       className={`py-4 glass ${darkMode ? "bg-blue-800 text-white" : "bg-blue-600 text-white"}`}

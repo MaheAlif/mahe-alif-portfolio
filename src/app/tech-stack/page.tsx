@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, JSX } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -26,18 +26,23 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
+// Define Tech type
+interface Tech {
+  name: string;
+  icon: JSX.Element;
+}
+
 // Function to shuffle an array
-const shuffleArray = (array: any[]) => {
+const shuffleArray = (array: Tech[]): Tech[] => {
   return array.sort(() => Math.random() - 0.5);
 };
 
 interface TechStackProps {
   darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const TechStack: React.FC<TechStackProps> = ({ darkMode }) => {
-  const techs = [
+  const techs: Tech[] = [
     { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
     { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
     { name: "TailwindCSS", icon: <SiTailwindcss className="text-teal-400" /> },
@@ -68,17 +73,15 @@ const TechStack: React.FC<TechStackProps> = ({ darkMode }) => {
   ];
 
   // Create shuffled techs array on client side
-  const [shuffledTechs, setShuffledTechs] = useState<any[]>([]);
-  const [shuffledTechs1, setShuffledTechs1] = useState<any[]>([]);
-  const [shuffledTechs2, setShuffledTechs2] = useState<any[]>([]);
-  const [shuffledTechs3, setShuffledTechs3] = useState<any[]>([]);
+  const [shuffledTechs, setShuffledTechs] = useState<Tech[]>([]);
+  const [shuffledTechs1, setShuffledTechs1] = useState<Tech[]>([]);
+  const [shuffledTechs2, setShuffledTechs2] = useState<Tech[]>([]);
 
   useEffect(() => {
     // Shuffle the arrays only once when component is mounted on the client
     setShuffledTechs(shuffleArray([...techs]));
     setShuffledTechs1(shuffleArray([...techs]));
     setShuffledTechs2(shuffleArray([...techs]));
-    setShuffledTechs3(shuffleArray([...techs]));
   }, []);
 
   return (
