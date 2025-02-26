@@ -1,11 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+interface SwitchProps {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Switch = ({ darkMode, setDarkMode }) => {
+const Switch: React.FC<SwitchProps> = ({ darkMode, setDarkMode }) => {
   return (
     <StyledWrapper>
       <label className="switch">
-      <input
+        <input
           id="input"
           type="checkbox"
           checked={darkMode} // Make sure it's controlled by darkMode state
@@ -68,7 +72,7 @@ const Switch = ({ darkMode, setDarkMode }) => {
       </label>
     </StyledWrapper>
   );
-}
+};
 
 const StyledWrapper = styled.div`
   .switch {
@@ -342,6 +346,7 @@ const StyledWrapper = styled.div`
     100% {
       transform: scale(1);
     }
-  }`;
+  }
+`;
 
 export default Switch;

@@ -1,12 +1,12 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import Switch from "../switch/page";
 import TechStack from "../tech-stack/page";
 import Navbar from "../navbar/page";
-import Footer from "@/footer/page";
+import Footer from "@/app/footer/page";
 import { FaLinkedin, FaGithub, FaArrowAltCircleDown } from "react-icons/fa";
 
 function Bento() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -46,22 +46,22 @@ function Bento() {
                     className="w-full rounded-xl shadow-lg "
                   />
                 </div>
-                <p className="lg:w-fit p-2">
-                  Hi! I'm Mahe Alif, a Computer Science & Engineering student at
+                <p className="lg:w-fit  p-2">
+                  Hi! I&apos;m Mahe Alif, a Computer Science & Engineering student at
                   United International University. I have experience in the MERN
                   stack, React, Python, and database management.
                   <br />
-                  Currently, I’m studying Computer Science and Engineering at
+                  Currently, I&apos;m studying Computer Science and Engineering at
                   United International University. Like many developers, I began
-                  with the MERN stack as my foundation, and I’m eager to keep
+                  with the MERN stack as my foundation, and I&apos;m eager to keep
                   building on my skills and expanding my expertise. With
-                  dedication and enthusiasm, I’m excited to make a meaningful
+                  dedication and enthusiasm, I&apos;m excited to make a meaningful
                   impact in software engineering.
                   <br />
-                  But recently, I've picked a keen interest in AI and Machine
-                  Learning. Though right now my knowledge-base is lacking, I'm
-                  determined to get myself upto speed with effort and a
-                  ginormous motivation!!!
+                  But recently, I&apos;ve picked a keen interest in AI and Machine
+                  Learning. Though right now my knowledge-base is lacking, I&apos;m
+                  determined to get myself upto speed with effort and a not-lackluster
+                   motivation!!!
                 </p>
               </div>
             </div>
