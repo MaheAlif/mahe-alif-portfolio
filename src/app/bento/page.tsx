@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Switch from "../switch/page";
+import TechStack from "../tech-stack/page";
+import Navbar from "../navbar/page";
+import Footer from "@/footer/page";
+import { FaLinkedin, FaGithub, FaArrowAltCircleDown } from "react-icons/fa";
 
 function Bento() {
   const [darkMode, setDarkMode] = useState(false);
@@ -15,24 +20,11 @@ function Bento() {
     <div>
       <div
         className={`min-h-screen font-sans ${
-          darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+          darkMode ? "bg-gray-900 text-white" : "bg-slate-200 text-black"
         }`}
       >
-        <header
-          className={`py-4 ${
-            darkMode ? "bg-blue-800 text-white" : "bg-blue-600 text-white"
-          }`}
-        >
-          <div className="container mx-auto px-6 flex justify-between items-center">
-            <h1 className="text-3xl font-bold">Mahe Alif's Portfolio</h1>
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded"
-            >
-              {darkMode ? "Light Mode" : "Dark Mode"}
-            </button>
-          </div>
-        </header>
+        {/* Navbar */}
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode}></Navbar>
 
         <main className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -41,13 +33,13 @@ function Bento() {
               className={`lg:col-span-2 p-3 lg:p-5 rounded-lg shadow-md  overflow-hidden ${
                 darkMode
                   ? "bg-gray-800 text-gray-300"
-                  : "bg-white text-gray-700"
+                  : "bg-slate-100 text-gray-700"
               }`}
             >
               <h2 className="text-xl font-bold mb-4">About Me</h2>
-              <div className="flex flex-col lg:flex-row w-full gap-2 p-2">
-                <div className="lg:w-1/2 flex justify-center gap-4 lg:justify-start relative">
-                  <div className="animated-border-2"></div>
+              <div className="flex flex-col lg:flex-row w-full gap-5 p-2">
+                <div className="lg:w-1/2 flex justify-center lg:justify-start ">
+                  <div className=""></div>
                   <img
                     src="https://media.licdn.com/dms/image/v2/D5603AQENG5Gtw56d3A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731582396563?e=1741824000&v=beta&t=WNh1_L_r2SFtYR6T3f6FtZO4_T6wx_N0bdClW8_eVEQ"
                     alt="Mahe Alif"
@@ -65,6 +57,11 @@ function Bento() {
                   building on my skills and expanding my expertise. With
                   dedication and enthusiasm, I’m excited to make a meaningful
                   impact in software engineering.
+                  <br />
+                  But recently, I've picked a keen interest in AI and Machine
+                  Learning. Though right now my knowledge-base is lacking, I'm
+                  determined to get myself upto speed with effort and a
+                  ginormous motivation!!!
                 </p>
               </div>
             </div>
@@ -74,7 +71,7 @@ function Bento() {
               className={`rounded-lg p-6 shadow-md relative overflow-hidden ${
                 darkMode
                   ? "bg-gray-800 text-gray-300"
-                  : "bg-white text-gray-700"
+                  : "bg-slate-100 text-gray-700"
               }`}
             >
               <div className="animated-border"></div>
@@ -91,8 +88,8 @@ function Bento() {
                   </a>
                 </li>
                 <li className="mb-2">
-                  <strong>Project 2:</strong> Here is a Github repo containing
-                  some algorithms on AI.{" "}
+                  <strong>Project 2:</strong> A Github repo containing some
+                  algorithms on AI.{" "}
                   <a
                     href="https://github.com/MaheAlif/AiLabAlgorithms"
                     className="text-teal-400"
@@ -101,43 +98,88 @@ function Bento() {
                   </a>
                 </li>
                 <li className="mb-2">
-                  <strong>Project 3:</strong> They are on the way...
+                  <strong>Project 3:</strong> They are curently under
+                  development...
                 </li>
               </ul>
             </div>
 
             {/* Contact */}
             <div
-              className={`rounded-lg p-6 shadow-md relative overflow-hidden ${
+              className={`flex flex-col gap-5 rounded-lg p-6 shadow-md relative overflow-hidden ${
                 darkMode
                   ? "bg-gray-800 text-gray-300"
-                  : "bg-white text-gray-700"
+                  : "bg-slate-100    text-gray-700"
               }`}
             >
               <div className=""></div>
               <h2 className="text-xl font-bold mb-4">Contact</h2>
-              <p>Connect with me:</p>
-              <ul className="list-disc ml-6 mt-4">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/mahe-alif-3483b9170/"
-                    className="text-blue-500 dark:text-blue-300 hover:underline"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/MaheAlif"
-                    className="text-blue-500 dark:text-blue-300 hover:underline"
-                  >
-                    GitHub
-                  </a>
-                </li>
-              </ul>
+              <p className="text-xl">Connect with me:</p>
+              <div className="flex mt-5 gap-5">
+                <a
+                  href="https://www.linkedin.com/in/mahe-alif-3483b9170/"
+                  className="text-blue-500 dark:text-blue-300 hover:underline"
+                >
+                  <FaLinkedin
+                    className={`text-7xl ${
+                      darkMode ? "text-white" : "text-blue-500"
+                    }`}
+                  />
+                </a>
+
+                <a
+                  href="https://github.com/MaheAlif"
+                  className="text-blue-500 dark:text-blue-300 hover:underline"
+                >
+                  <FaGithub
+                    className={`text-7xl ${
+                      darkMode ? "text-white" : "text-gray-900"
+                    }`}
+                  />
+                </a>
+              </div>
+              {/* Email address */}
+              <div className="flex flex-col gap-5">
+                <p className="flex gap-5 text-xl">
+                  Get my email <FaArrowAltCircleDown className="mt-1" />
+                </p>
+                <div className="diff aspect-[21/9]">
+                  <div className="diff-item-1">
+                    <div className="bg-primary text-primary-content grid place-content-center text-xl lg:text-2xl font-black">
+                      maheejaman16@gmail.com
+                    </div>
+                  </div>
+                  <div className="diff-item-2">
+                    <div className="bg-base-200 grid place-content-center text-5xl text-white">
+                      Mahe Alif
+                    </div>
+                  </div>
+                  <div className="diff-resizer"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* New section */}
+            <div
+              className={`lg:col-span-2 rounded-lg p-2 shadow-md relative overflow-hidden ${
+                darkMode
+                  ? "bg-gray-800 text-gray-300"
+                  : "bg-slate-100    text-gray-700"
+              }`}
+            >
+              <TechStack darkmode={darkMode} /> {/* Tech Stack Section */}
             </div>
           </div>
         </main>
+        {/* Footer */}
+        {/* Footer Section */}
+        <div
+          className={`w-full p-5 mx-auto text-center ${
+            darkMode ? "bg-gray-600 text-white" : "bg-slate-300 text-black"
+          }`}
+        >
+          <Footer />
+        </div>
       </div>
 
       <style jsx>{`

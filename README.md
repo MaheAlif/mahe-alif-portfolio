@@ -1,3 +1,5 @@
+# mahe-alif-portfolio
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -22,4 +24,3 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Welcome to my portfolio
 
-# mahe-alif-portfolio
